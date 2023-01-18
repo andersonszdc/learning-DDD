@@ -1,21 +1,28 @@
-import { Rarity } from "../../types"
+import { ItemStatus, Rarity } from "../../types"
+import ItemBuilder from "../builder/ItemBuilder"
 
 export default class Item {
     id: string
-    name: string
-    float: number
-    rarity: Rarity
-    price: number
+    private name: string | undefined
+    private float: number | undefined
+    private rarity: Rarity | undefined
+    private price: number | undefined
+    private status: ItemStatus | undefined
 
-    constructor (id: string, name: string, float: number, rarity: Rarity, price: number) {
-        this.id = id
-        this.name = name
-        this.float = float
-        this.rarity = rarity
-        this.price = price
+    constructor (itemBuilder: ItemBuilder) {
+        this.id = itemBuilder.id
+        this.name = itemBuilder.name
+        this.float = itemBuilder.float
+        this.rarity = itemBuilder.rarity
+        this.price = itemBuilder.price
+        this.status = itemBuilder.status
     }
 
     getQuality() {
+        if (!this.float) {
+            throw new Error('Item without float')
+        }
+
         if (this.float >= 0 && this.float <= 0.07) {
             return 'Factory New'
         } else if (this.float > 0.07 && this.float <= 0.15) {
@@ -27,5 +34,9 @@ export default class Item {
         } else if (this.float > 0.45 && this.float <= 1) {
             return 'Battle-Scarred'
         }
+    }
+
+    putUpForSale() {
+        this.status = "for sale"
     }
 }

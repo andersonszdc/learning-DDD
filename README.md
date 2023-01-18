@@ -7,4 +7,5 @@ Para isso, irei utilizar as seguintes metodologias:
 - DDD
 
 Usecases:
-- Comprar/Vender um item
+- Colocar um item à venda
+- Comprar um item

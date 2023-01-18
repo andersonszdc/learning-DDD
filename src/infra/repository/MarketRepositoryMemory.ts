@@ -1,7 +1,7 @@
 import Item from "../../domain/entity/Item"
-import ItemRepository from "../../domain/repository/ItemRepository"
+import MarketRepository from "../../domain/repository/MarketRepository"
 
-export default class ItemRepositoryMemory implements ItemRepository {
+export default class MarketRepositoryMemory implements MarketRepository {
     items: Item[]
 
     constructor() {
@@ -21,5 +21,9 @@ export default class ItemRepositoryMemory implements ItemRepository {
     delete(itemId: string) {
         const indexToRemove = this.items.findIndex((item) => item.id = itemId)
         this.items.splice(indexToRemove, 1)
+    }
+
+    update(itemId: string, data: any): void {
+        throw new Error("Method not implemented")
     }
 }

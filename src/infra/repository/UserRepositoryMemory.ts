@@ -1,6 +1,7 @@
 import User from "../../domain/entity/User"
+import UserRepository from "../../domain/repository/UserRepository"
 
-export default class UserRepositoryMemory {
+export default class UserRepositoryMemory implements UserRepository {
     users: User[]
 
     constructor() {
@@ -11,18 +12,19 @@ export default class UserRepositoryMemory {
         this.users.push(user)
     }
 
-    get(userId: string) {
-        const user = this.users.find((user) => user.id === userId)
+    get(email: string) {
+        const user = this.users.find((user) => user.email === email)
         if (!user) throw new Error('User not found')
         return user
     }
 
-    delete(userId: string) {
-        const userIndex = this.users.findIndex((user) => user.id === userId)
+    delete(email: string) {
+        const userIndex = this.users.findIndex((user) => user.email === email)
         this.users.splice(userIndex, 1)
     }
 
-    update(userId: string, data: any) {
+    update(email: string, data: any) {
         throw new Error('Method not implemented')
+        // const user = this.users.find((user) => user.email === email)
     }
 }
