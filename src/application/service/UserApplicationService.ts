@@ -6,18 +6,22 @@ import CreditCommand from "../command/CreditCommand";
 export default class UserApplicationService {
     constructor(readonly publisher: Publisher, readonly userRepository: UserRepository) {}
 
-    create(email: string) {
+    async create(email: string) {
         const user = new UserBuilder(email).build()
-        this.userRepository.save(user)
+        await this.userRepository.save(user)
     }
 
-    get(email: string) {
-        const user = this.userRepository.get(email)
+    async get(email: string) {
+        const user = await this.userRepository.get(email)
         return user
     }
 
     credit(email: string, amount: number) {
         const creditCommand = new CreditCommand(email, amount)
         this.publisher.publish(creditCommand)
+    }
+
+    async delete(email: string) {
+        await this.userRepository.delete(email)
     }
 }

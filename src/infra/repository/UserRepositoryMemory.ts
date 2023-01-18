@@ -8,23 +8,19 @@ export default class UserRepositoryMemory implements UserRepository {
         this.users = []
     }
 
-    save(user: User) {
-        this.users.push(user)
-    }
-
-    get(email: string) {
-        const user = this.users.find((user) => user.email === email)
-        if (!user) throw new Error('User not found')
-        return user
-    }
-
-    delete(email: string) {
-        const userIndex = this.users.findIndex((user) => user.email === email)
-        this.users.splice(userIndex, 1)
-    }
-
-    update(email: string, data: any) {
+    async save(user: User): Promise<void> {
         throw new Error('Method not implemented')
-        // const user = this.users.find((user) => user.email === email)
+    }
+
+    async get(email: string): Promise<User> {
+        throw new Error('Method not implemented')
+    }
+
+    async delete(email: string): Promise<void> {
+        throw new Error('Method not implemented')
+    }
+
+    async update(email: string, data: any): Promise<void> {
+        throw new Error('Method not implemented')
     }
 }

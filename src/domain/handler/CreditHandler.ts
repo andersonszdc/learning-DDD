@@ -7,7 +7,7 @@ export default class CreditHandler implements Observer {
 
     constructor(readonly userRepository: UserRepository) {}
 
-    notify(command: CreditCommand) {
-        this.userRepository.update(command.email, {amount: command.amount})
+    async notify(command: CreditCommand) {
+        await this.userRepository.update(command.email, {amount: command.amount})
     }
 }
