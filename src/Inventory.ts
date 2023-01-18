@@ -5,10 +5,6 @@ export default class Inventory {
 
     constructor(readonly items: Item[], readonly itemRepo: ItemRepository) {}
 
-    removeAnItem(ItemId: string) {
-        this.items.find((item) => item.id === ItemId)
-    }
-
     addAnItem(item: Item) {
         this.itemRepo.save(item)
     }

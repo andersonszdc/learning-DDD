@@ -5,12 +5,14 @@ export default class Item {
     name: string
     float: number
     rarity: Rarity
+    price: number
 
-    constructor (id: string, name: string, float: number, rarity: Rarity) {
+    constructor (id: string, name: string, float: number, rarity: Rarity, price: number) {
         this.id = id
         this.name = name
         this.float = float
         this.rarity = rarity
+        this.price = price
     }
 
     getQuality() {

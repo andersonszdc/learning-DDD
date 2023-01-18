@@ -5,3 +5,6 @@ Para isso, irei utilizar as seguintes metodologias:
 - TDD
 - Clean Architecture
 - DDD
+
+Usecases:
+- Comprar/Vender um item
