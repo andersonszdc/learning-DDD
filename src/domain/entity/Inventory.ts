@@ -1,5 +1,5 @@
 import Item from "./Item"
-import ItemRepository from "./ItemRepository"
+import ItemRepository from "../repository/ItemRepository"
 
 export default class Inventory {
 

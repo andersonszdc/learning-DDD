@@ -1,4 +1,4 @@
-import { Rarity } from "./types"
+import { Rarity } from "../../types"
 
 export default class Item {
     id: string

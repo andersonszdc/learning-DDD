@@ -1,4 +1,4 @@
-import Inventory from "./Inventory";
+import Inventory from "../entity/Inventory";
 
 export default interface InventoryRepository {
     get(inventoryId: string): Inventory;

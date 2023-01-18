@@ -1,4 +1,4 @@
-import Item from "./Item"
+import Item from "../../domain/entity/Item"
 
 export default class ItemRepositoryMemory implements ItemRepositoryMemory {
     items: Item[]

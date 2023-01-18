@@ -1,5 +1,5 @@
-import Item from "./Item";
-import User from "./User";
+import Item from "../entity/Item";
+import User from "../entity/User";
 
 export default class TransferService {
     transfer(from: User, to: User, item: Item) {

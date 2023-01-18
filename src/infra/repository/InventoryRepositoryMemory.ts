@@ -1,4 +1,4 @@
-import Inventory from "./Inventory";
+import Inventory from "../../domain/entity/Inventory";
 
 export default class InventoryRepositoryMemory {
     inventories: Inventory[]

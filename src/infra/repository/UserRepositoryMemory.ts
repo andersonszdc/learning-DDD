@@ -1,4 +1,4 @@
-import User from "./User"
+import User from "../../domain/entity/User"
 
 export default class UserRepositoryMemory {
     users: User[]
