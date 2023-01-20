@@ -21,6 +21,11 @@ export default class UserApplicationService {
         this.publisher.publish(creditCommand)
     }
 
+    debit(email: string, amount: number) {
+        const debitCommand = new DebitCommand(email, amount)
+        this.publisher.publish(debitCommand)
+    }
+
     async delete(email: string) {
         await this.userRepository.delete(email)
     }

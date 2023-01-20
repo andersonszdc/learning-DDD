@@ -47,3 +47,8 @@ test('adicionar um saldo à conta', async () => {
     expect(user.getBalance()).toBe(1000)
     await connection.close()
 })
+
+test('debitar da conta de um usuário', async () => {
+    userService.create("c@gmail.com")
+    userService.debit("c@gmail.com", 1000)
+})
